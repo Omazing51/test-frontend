@@ -63,32 +63,71 @@
                 font-weight: 600;
                 border: 1px solid rgba(0, 0, 0, 0.151);
                 height: 50px;
+                position: relative;
+                padding-left:35px;
             }
-          .uno
-          {
+            input:hover
+            {
+                border-color:#f79d65;
+            }
+           
+            input:focus
+            {
+            }
+           .uno
+           {
+               position: relative;
                border-top-left-radius: 25px;
                border-bottom-left-radius: 25px;
                width: 300px;
-          }
-          .dos
-          {
+               img
+               {
+                position: absolute;
+                margin-top: -12%;
+                margin-left: -45%;
+               }
+            }
+           .dos
+           {
+               position: relative;
                width: 150px;
-          }
-          .tres
-          {
+               img
+               {
+                position: absolute;
+                margin-top: -24%;
+                margin-left: -45%;
+               }
+            }
+           .tres
+           {
+               position: relative;
                width: 150px;
-          }
-          .cuatro
-          {
+               img
+               {
+                position: absolute;
+                margin-top: -24%;
+                margin-left: -45%;
+               }
+              
+            }
+           .cuatro
+           {
+               position: relative;
                border-top-right-radius: 25px;
                border-bottom-right-radius: 25px;
                width: 250px;
-          }
-          .boton
-          {
-            padding: 10px;
-              button
-              {
+               img
+               {
+                position: absolute;
+                margin-top: -15%;
+                margin-left: -45%;
+               }
+            }
+           .boton
+           {
+            padding: 45px;
+               button
+               {
                    border: none;
                    border-radius: 25px;  
                    background-color: #f79d65;
@@ -97,12 +136,12 @@
                    font-size: 15px;
                    color: white;
                    font-weight: 500;
-              }
-              button:hover
-              {
+                }
+                button:hover
+               {
                   opacity: 89%;
-              }
-          }
+                }
+            }
         }
     }
 }
