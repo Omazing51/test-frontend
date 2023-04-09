@@ -2,14 +2,25 @@
 {
     font-family: 'Montserrat', sans-serif;
     border: 1px solid green;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 500px;
-    position: relative;
+    height: 100vh;
+    position: fixed;
+    padding: 16px;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(0,0,0,0.75);
+    transition: all 0.3s ease-in-out;
    .modal__body
    {
+        border-radius: 15px;
         width: 400px;
         height: 300px;
-        border: 5px solid green;
+        background-color: white;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -17,24 +28,74 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
+        .uno
+        {
+            input 
+            {
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+            }
+            img
+            {
+             position: absolute;
+             margin-top: 5%;
+             margin-left: -88%;
+            }
+        }
+        .dos
+        {
+            input
+            {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            }
+            img
+            {
+             position: fixed;
+             margin-top: 5%;
+             margin-left: -88%;
+            }
+        }
+        h3
+        {
+            font-weight: 900;
+        }
         input
         {
-            border: 1px solid green;
+            border: 1px solid rgba(0, 0, 0, 0.274);
             width: 80%;
             height: 50px;
-            border-radius: 15px;
+            font-weight: 600;
+            font-size: 14px;
+            position: relative;
+            padding-left:40px;
+        }
+        input:focus
+        {
+            opacity: 50%;
         }
         button
         {
             font-weight: 700;
             font-size: 15px;
-            width: 82%;
+            width: 92%;
             height: 50px;
             border-radius: 25px;
             color: white;
             background:  rgb(247, 157, 101);
             border: none;
         }
+        button:hover
+        {
+            opacity: 90%;
+        }
+        a
+        {
+            margin-left: -90%;
+            text-decoration: none;
+            font-weight: 600;
+            color: black;
+        }
+   
         }
    }
