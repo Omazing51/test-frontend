@@ -2,23 +2,32 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { HotelComponent } from './components/hotel/hotel.component';
 
+const appRoutes:Routes=[
+  {path:'', component:HomeComponent},
+  {path:'hotel', component:HotelComponent},
+
+];
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ModalComponent
+    ModalComponent,
+    HotelComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]
