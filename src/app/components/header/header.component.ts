@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  public modalSwitch : any;
+
+  openModal()
+  {
+      this.modalSwitch = true;
+  }
 
 }

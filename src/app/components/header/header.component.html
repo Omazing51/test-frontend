@@ -14,7 +14,7 @@
                     <p>Encuentra tu hotel y disfruta de unas vacaciones increibles!</p>
                 </li>
                 <li class="boton">
-                    <button href="">Iniciar sesion</button>
+                    <button href="" (click)="openModal()">Iniciar sesion</button>
                 </li>
             </ul>           
         </div>
@@ -39,5 +39,8 @@
                 <button>Buscar</button>
             </div>
         </div>
+    </div>
+    <div class="modal" *ngIf="modalSwitch == true">
+        <app-modal></app-modal>
     </div>
 </div>
