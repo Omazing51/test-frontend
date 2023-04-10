@@ -3,17 +3,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
     </style>
     <div class="modal__body">
-        <form>
         <div class="tittle">
             <a href="" (click)="closeModal()">X</a>
             <h3>Iniciar sesion</h3>
         </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
         <div class="uno">
-            <input type="email" name="email" placeholder="Digite su email">
+            <input type="email" formControlName="email" placeholder="Digite su email">
             <img src="./assets/i1.svg" alt="">
         </div>
         <div class="dos">
-            <input type="password" name="pass" placeholder="Digite su contraseña">
+            <input type="password" formControlName="pass" placeholder="Digite su contraseña">
             <img src="./assets/i4.svg" alt="">
         </div>
         <br>

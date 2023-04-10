@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { HotelComponent } from './components/hotel/hotel.component';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes:Routes=[
   {path:'', component:HomeComponent},
@@ -30,6 +31,7 @@ const appRoutes:Routes=[
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
