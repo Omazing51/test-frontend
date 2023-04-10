@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { HotelComponent } from './components/hotel/hotel.component';
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 const appRoutes:Routes=[
   {path:'', component:HomeComponent},
@@ -27,6 +28,8 @@ const appRoutes:Routes=[
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
