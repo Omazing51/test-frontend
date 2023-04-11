@@ -4,21 +4,21 @@
     </style>
     <div class="modal__body">
         <div class="tittle">
-            <a href="" (click)="closeModal()">X</a>
+            <a (click)="closeModal()">X</a>
             <h3>Iniciar sesion</h3>
         </div>
-        <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+        <form [formGroup]="formLogin" (ngSubmit)="Login()">
         <div class="uno">
             <input type="email" formControlName="email" placeholder="Digite su email">
             <img src="./assets/i1.svg" alt="">
         </div>
         <div class="dos">
-            <input type="password" formControlName="pass" placeholder="Digite su contraseña">
+            <input type="password" formControlName="userPassword" placeholder="Digite su contraseña">
             <img src="./assets/i4.svg" alt="">
         </div>
         <br>
         <div class="boton">
-            <button>Ingresar</button>
+            <button [disabled]="!formLogin.valid">Ingresar</button>
         </div>
     </form>
     </div>
