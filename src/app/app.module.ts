@@ -16,6 +16,7 @@ import { OptionsComponent } from './components/options/options.component';
 const appRoutes:Routes=[
   {path:'', component:HomeComponent},
   {path:'hotel', component:HotelComponent},
+  {path:'options', component:OptionsComponent},
 
 ];
 @NgModule({

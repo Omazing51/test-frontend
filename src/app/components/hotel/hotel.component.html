@@ -1,21 +1,30 @@
 <div class="table">
-    <table>
-        <thead>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Ubicacion</th>
-            <th>Clase</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </thead>
-        <tbody *ngFor="let h of hotels">
-            <th>{{h.hotelName}}</th>
-            <th>{{h.hotelDescription}}</th>
-            <th>{{h.location.locationDescription}}</th>
-            <th>{{h.hotelClass.hotelClassDescription}}</th>
-            <th>{{h.hotelStatus.statusDescription}}</th>
-            <th></th>
-        </tbody>
-    </table>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+      </style>
+    <section class="table__header">
+        <h1>HOTELES</h1>
+    </section>
+    <section class="table__body">
+        <table>
+            <thead>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Ubicacion</th>
+                <th>Clase</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody *ngFor="let h of hotels">
+                <td>{{h.hotelName}}</td>
+                <td>{{h.hotelDescription}}</td>
+                <td>{{h.location.locationDescription}}</td>
+                <td>{{h.hotelClass.hotelClassDescription}}</td>
+                <td>{{h.hotelStatus.statusDescription}}</td>
+                <td></td>
+            </tbody>
+        </table>
+    </section>
+
 </div>
 

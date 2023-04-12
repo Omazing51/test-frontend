@@ -40,7 +40,7 @@ export class ModalComponent implements OnInit, OnDestroy {
       const token = res.body.token;
       sessionStorage.setItem('token', token );
       this.closeModal();
-      this.router.navigate(['/hotel']);
+      this.router.navigate(['/options']);
     }, err=> {
       console.log("Error en el login", err);
     });
