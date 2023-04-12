@@ -11,6 +11,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { HotelComponent } from './components/hotel/hotel.component';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { OptionsComponent } from './components/options/options.component';
 
 const appRoutes:Routes=[
   {path:'', component:HomeComponent},
@@ -24,7 +25,8 @@ const appRoutes:Routes=[
     FooterComponent,
     HomeComponent,
     ModalComponent,
-    HotelComponent
+    HotelComponent,
+    OptionsComponent
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@ import { Subscription } from 'rxjs';
 export class ModalComponent implements OnInit, OnDestroy {
 
   formLogin: FormGroup;
-  subRef$?: Subscription;
+  subRef$: Subscription;
   
   constructor(private modalS: SwitchService, private formBuilder: FormBuilder,
     private http: HttpClient, private router: Router ) 
@@ -37,8 +37,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     };
    this.subRef$ =  this.http.post<ResponseI>('https://localhost:7066/api/users/login',
     userLogin, { observe: 'response' }).subscribe(res => {
-      const token = res.body?.response;
-      console.log('token',res.body?.response)
+      const token = res.body.token;
       sessionStorage.setItem('token', token );
       this.closeModal();
       this.router.navigate(['/hotel']);

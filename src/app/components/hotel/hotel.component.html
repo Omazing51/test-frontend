@@ -1,1 +1,21 @@
-<p>hotel works!</p>
+<div class="table">
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Ubicacion</th>
+            <th>Clase</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody *ngFor="let h of hotels">
+            <th>{{h.hotelName}}</th>
+            <th>{{h.hotelDescription}}</th>
+            <th>{{h.location.locationDescription}}</th>
+            <th>{{h.hotelClass.hotelClassDescription}}</th>
+            <th>{{h.hotelStatus.statusDescription}}</th>
+            <th></th>
+        </tbody>
+    </table>
+</div>
+

@@ -1,3 +1,3 @@
 export interface ResponseI{
-    response: any;
+    token: string;
 }
