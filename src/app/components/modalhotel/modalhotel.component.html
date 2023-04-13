@@ -1,0 +1,31 @@
+<!-- <div class="modal_hotel">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    </style>
+    <div class="modal__body">
+        <div class="tittle">
+            <a (click)="closeModal()">X</a>
+            <h3>Registrar hotel</h3>
+        </div>
+        <form [formGroup]="formHotel" (ngSubmit)="Login()">
+        <div class="uno">
+            <label for="">Hotel:</label>
+            <input type="text" formControlName="hotelName" placeholder="Digite el nombre del hotel">
+        </div>
+        <div class="dos">
+            <label for="">Hotel:</label>
+            <input type="text" formControlName="hotelDescription" placeholder="Digite la descripcion del hotel">
+        </div>
+        <div class="dos">
+            <select *ngFor="let h of locations">
+                <option *ngFor="let option of options" [value]="option.value">{{option.label}}</option>
+            </select>
+        </div>
+        <br>
+        <div class="boton">
+            <button [disabled]="!formHotel.valid">Guardar</button>
+        </div>
+    </form>
+    </div>
+
+</div> -->
