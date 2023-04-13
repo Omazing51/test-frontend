@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { SwitchService } from 'src/app/services/switch.service';
 
 @Component({
@@ -12,10 +13,19 @@ export class HeaderComponent {
   /**
    *
    */
-  constructor(private modalS:SwitchService) {}
+  constructor(private modalS:SwitchService, private router:Router) {}
   ngOnInit()
   {
     this.modalS.$modal.subscribe((value=>{this.modalSwitch = value}));
+  }
+
+  show(): string{  
+    return this.router.url;
+  }
+
+  cerrarSesion()
+  {
+    this.router.navigate(['']);
   }
 
   openModal()

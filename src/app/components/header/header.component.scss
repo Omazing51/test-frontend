@@ -145,6 +145,25 @@
                   opacity: 89%;
                 }
             }
+            .boton2
+           {
+            padding: 45px;
+               button
+               {
+                   border: none;
+                   border-radius: 25px;  
+                   background-color: #f79d65;
+                   height: 50px;
+                   width: 100px;
+                   font-size: 15px;
+                   color: white;
+                   font-weight: 500;
+                }
+                button:hover
+               {
+                  opacity: 89%;
+                }
+            }
         }
     }
 }

@@ -14,15 +14,15 @@
                     <p>Encuentra tu hotel y disfruta de unas vacaciones increibles!</p>
                 </li>
                 <!-- *ngIf="IsAuthenticated" -->
-                <li class="boton">
-                    <button href="" (click)="openModal()">Iniciar sesion</button>
+                <li class="boton" *ngIf="show()!= '/hotel' && show()!= '/options' ">
+                    <button (click)="openModal()">Iniciar sesion</button>
                 </li>
-                <!-- <li class="boton">
-                    <button href="/">Cerrar sesion</button>
-                </li> -->
+                <li class="boton2" *ngIf="show()!= '/' && show()!= '/home' ">
+                    <button (click)="cerrarSesion()">Cerrar sesion</button>
+                </li>
             </ul>           
         </div>
-        <div class="secondnav">
+        <div class="secondnav" *ngIf="show()!= '/hotel' && show()!= '/options' ">
             <div class="uno">
                 <input class="uno" type="text" placeholder="¿A donde vas?">
                 <img src="./assets/i3.svg" alt="">
