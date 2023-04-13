@@ -1,4 +1,5 @@
 export interface LocationI{
-    email:any;
-    userPassword:any;
+    cityId:any;
+    postalCode:any;
+    locationDescription:any;
 }
