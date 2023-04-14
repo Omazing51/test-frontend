@@ -4,6 +4,26 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StorageService {
+  private storage: any;
 
-  constructor() { }
+  constructor() {
+    this.storage = sessionStorage;
+   }
+
+   public retrieve(key: string): any 
+   {
+       const item = this.storage.getItem(key);
+
+       if (item && item != 'undefined')
+       {
+           return JSON.parse(item);
+       }
+
+       return;
+   }
+
+   public store(key: string, value: any)
+   {
+       this.storage.setItem(key, JSON.stringify(value));
+   }
 }
