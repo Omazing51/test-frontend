@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ResponseI } from 'src/app/models/response.interface';
 import { Subscription } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
+import { SecurityService } from 'src/app/services/security.service';
 
 
 @Component({
@@ -19,8 +21,10 @@ export class ModalComponent implements OnInit, OnDestroy {
   subRef$: Subscription;
   
   constructor(private modalS: SwitchService, private formBuilder: FormBuilder,
-    private http: HttpClient, private router: Router ) 
+    private dataService: DataService, private securityService: SecurityService, private router: Router ) 
     {
+      this.securityService.LogOff();
+
         this.formLogin = formBuilder.group({
           email: ['', Validators.required],
           userPassword: ['', Validators.required]
@@ -35,10 +39,12 @@ export class ModalComponent implements OnInit, OnDestroy {
       email: this.formLogin.value.email,
       userPassword: this.formLogin.value.userPassword,
     };
-   this.subRef$ =  this.http.post<ResponseI>('https://localhost:7066/api/users/login',
-    userLogin, { observe: 'response' }).subscribe(res => {
+
+    const url = 'https://localhost:7066/api/users/login';
+   this.subRef$ =  this.dataService.post<ResponseI>(url,
+    userLogin).subscribe(res => {
       const token = res.body.token;
-      sessionStorage.setItem('token', token );
+      this.securityService.SetAuthData(token);
       this.closeModal();
       this.router.navigate(['/options']);
     }, err=> {
