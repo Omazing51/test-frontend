@@ -18,6 +18,7 @@ import { RoomimageComponent } from './components/roomimage/roomimage.component';
 import { RoomComponent } from './components/room/room.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { ModalImageComponent } from './components/modal-image/modal-image.component';
+import { HotelRoomComponent } from './components/hotel-room/hotel-room.component';
 
 const appRoutes:Routes=[
   {path:'', component:HomeComponent},
@@ -40,7 +41,8 @@ const appRoutes:Routes=[
     RoomimageComponent,
     RoomComponent,
     BookingComponent,
-    ModalImageComponent
+    ModalImageComponent,
+    HotelRoomComponent
   ],
   imports: [
     BrowserModule,
