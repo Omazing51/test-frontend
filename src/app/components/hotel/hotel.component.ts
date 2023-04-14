@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { HotelI } from 'src/app/models/hotel.interface';
 import { DataService } from 'src/app/services/data.service';
 import { SecurityService } from 'src/app/services/security.service';
+import { SwitchHService } from 'src/app/services/switch-h.service';
 import { SwitchService } from 'src/app/services/switch.service';
 
 @Component({
@@ -13,12 +14,12 @@ import { SwitchService } from 'src/app/services/switch.service';
 export class HotelComponent {
   public modalSwitch : any;
   hotels: HotelI[] = [];
-  constructor(private dataService: DataService, private securityService: SecurityService, private modalH:SwitchService) {}
+  constructor(private dataService: DataService, private securityService: SecurityService, private modalH:SwitchHService) {}
 
   ngOnInit(){
     this.modalH.$modal.subscribe((value=>{this.modalSwitch = value}));
     const url = 'https://localhost:7066/api/hotels';
-    this.dataService.get<HotelI[]>(url,).subscribe(res => {
+    this.dataService.get<HotelI[]>(url).subscribe(res => {
      this.hotels =  res.body;
     }),
     err=> {

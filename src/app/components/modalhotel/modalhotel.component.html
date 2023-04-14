@@ -7,23 +7,42 @@
             <a (click)="closeModal()">X</a>
             <h3>Registrar hotel</h3>
         </div>
-        <form [formGroup]="formHotel">
+        <form [formGroup]="formHotel" (ngSubmit)="Save()">
         <div class="uno">
             <label for="">Hotel:</label>
             <input type="text" formControlName="hotelName" placeholder="Digite el nombre del hotel">
         </div>
+        <br>
         <div class="dos">
-            <label for="">Hotel:</label>
+            <label for="">Descripcion:</label>
             <input type="text" formControlName="hotelDescription" placeholder="Digite la descripcion del hotel">
         </div>
-        <div class="dos">
-            <select>
+        <br>
+        <div class="tres">
+            <label for="">Ubicacion:</label>
+            <select formControlName="location" >
                 <option  *ngFor="let h of locations" [value]="h.locationId">{{h.locationDescription}}</option>
             </select>
         </div>
         <br>
+        <div class="cuatro">
+            <label for="">Clase de hotel:</label>
+            <select formControlName="hotelClass">
+                <option *ngFor="let c of hotelclasses" [value]="c.hotelClassId">{{c.hotelClassName}}</option>
+            </select>
+        </div>
+        <br>
+        <div class="cinco" >
+            <label for="">Estado:</label>
+            <select formControlName="hotelStatus" >
+                <option  *ngFor="let s of hotelstatusses" [value]="s.statusId">{{s.statusDescription}}</option>
+            </select>
+        </div>
+        <br>
+        <br>
+        <br>
         <div class="boton">
-            <button [disabled]="!formHotel.valid">Guardar</button>
+            <button (click)="Save()">Guardar</button>
         </div>
     </form>
     </div>

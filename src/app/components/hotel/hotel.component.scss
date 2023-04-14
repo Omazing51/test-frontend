@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+.modal
+{
+    position: absolute;
+}
+
 .table
 {
     min-height: 100vh;
@@ -94,14 +99,14 @@ table
 
 thead, th
 {
-    position: sticky;
+    // position: sticky;
     top:0;
     left: 0;
 }
 
 .buttons
 {
-   position: relative;
+//    position: relative;
    display: flex;
    flex-wrap: column wrap;
    align-items: center;

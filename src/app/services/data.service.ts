@@ -27,7 +27,7 @@ export class DataService {
     post<T>(url: string, data: any): Observable<HttpResponse<T>> 
     {
       const httpHeaders: HttpHeaders = this.getHeaders();
-
+      console.log(url);
       return this.http.post<T>(url, data,
         {
           headers: httpHeaders,
