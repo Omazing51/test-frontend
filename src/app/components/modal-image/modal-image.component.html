@@ -1,1 +1,36 @@
-<p>modal-image works!</p>
+<div class="modal_imagen">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    </style>
+    <div class="modal__body">
+        <div class="tittle">
+            <a (click)="closeModal()">X</a>
+            <h3>Registrar hotel</h3>
+        </div>
+        <form [formGroup]="formImage" (ngSubmit)="uploadFile()">
+        <br>
+        <div class="tres">
+            <label for="">Hotel:</label>
+            <select formControlName="hotel" >
+                <option  *ngFor="let h of hotels" [value]="h.hotelId">{{h.hotelName}}</option>
+            </select>
+        </div>
+        <br>
+        <div class="cuatro">
+            <label for="">Imagen:</label>
+            <input  formControlName="imageURL" (change)="takeFile($event)" type="file" formControlName="imageURL">
+        </div>
+        <br>
+        <div class="cinco" >
+            <img [src]="previsualization" width="30%" alt="">
+        </div>
+        <br>
+   
+        <br>
+        <div class="boton">
+            <button>Guardar</button>
+        </div>
+    </form>
+    </div>
+
+</div>
