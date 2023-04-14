@@ -13,6 +13,10 @@ import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { OptionsComponent } from './components/options/options.component';
 import { ModalhotelComponent } from './components/modalhotel/modalhotel.component';
+import { HotelimageComponent } from './components/hotelimage/hotelimage.component';
+import { RoomimageComponent } from './components/roomimage/roomimage.component';
+import { RoomComponent } from './components/room/room.component';
+import { BookingComponent } from './components/booking/booking.component';
 
 const appRoutes:Routes=[
   {path:'', component:HomeComponent},
@@ -29,7 +33,11 @@ const appRoutes:Routes=[
     ModalComponent,
     HotelComponent,
     OptionsComponent,
-    ModalhotelComponent
+    ModalhotelComponent,
+    HotelimageComponent,
+    RoomimageComponent,
+    RoomComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,
