@@ -1,1 +1,21 @@
-<p>home works!</p>
+<div class="home">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+      </style>
+    <div class="array" *ngFor="let h of hotels">
+     <div class="hotel">
+     <div class="img">
+        <h2>Imagen</h2>
+     </div>
+     <div class="name">
+        {{h.hotelName}}
+     </div>
+     <div class="loc">
+        {{h.location.locationDescription}}
+     </div>
+     <div class="button">
+        <button>Ver oferta</button>
+     </div>
+     </div>
+    </div>
+</div>
