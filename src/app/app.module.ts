@@ -17,11 +17,13 @@ import { HotelimageComponent } from './components/hotelimage/hotelimage.componen
 import { RoomimageComponent } from './components/roomimage/roomimage.component';
 import { RoomComponent } from './components/room/room.component';
 import { BookingComponent } from './components/booking/booking.component';
+import { ModalImageComponent } from './components/modal-image/modal-image.component';
 
 const appRoutes:Routes=[
   {path:'', component:HomeComponent},
   {path:'hotel', component:HotelComponent},
   {path:'options', component:OptionsComponent},
+  {path:'hotelimage', component:HotelimageComponent},
 
 ];
 @NgModule({
@@ -37,7 +39,8 @@ const appRoutes:Routes=[
     HotelimageComponent,
     RoomimageComponent,
     RoomComponent,
-    BookingComponent
+    BookingComponent,
+    ModalImageComponent
   ],
   imports: [
     BrowserModule,

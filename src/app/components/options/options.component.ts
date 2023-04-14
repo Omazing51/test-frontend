@@ -22,4 +22,8 @@ export class OptionsComponent {
     this.router.navigate(['/booking']);
    }
 
+   openMenuHi(){
+    this.router.navigate(['/hotelimage']);
+   }
+
 }

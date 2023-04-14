@@ -22,7 +22,7 @@
                 </li>
             </ul>           
         </div>
-        <div class="secondnav" *ngIf="show()!= '/hotel' && show()!= '/options' ">
+        <div class="secondnav" *ngIf="IsAuthenticated != true">
             <div class="uno">
                 <input class="uno" type="text" placeholder="¿A donde vas?">
                 <img src="./assets/i3.svg" alt="">

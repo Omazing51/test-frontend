@@ -1,0 +1,147 @@
+* 
+{
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.modal
+{
+    position: absolute;
+}
+
+.table
+{
+    min-height: 100vh;
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.table__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    height: 7vh;
+    text-align: center;
+    color: #f79d65;
+
+.add
+{
+    width: 100px;
+    height: 35px;
+    background-color: #7fb685;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+}
+.add:hover
+{
+    opacity: 80%;
+}
+}
+.table__body{
+    height: 90vh;
+    text-align: center;
+    border-radius: 15px;
+}
+h1
+{
+    font-size: 30px;
+    font-weight: 800;
+}
+table, th, td
+{
+    padding: 1rem;
+    border-radius: 15px;
+}
+th
+{
+    background-color: #fbd3bb;
+    font-weight: 700;
+    width: auto;
+}
+td
+{
+    font-weight: 500;
+}
+div.table
+{
+    width: 97vw;
+    height: 100%;
+    background-color: #f7f0ee;
+    box-shadow: 0 .4rem .8rem #0005;
+    
+}
+
+table
+{
+    width: 82vw;
+
+}
+
+.table__body::-webkit-scrollbar-thumb
+{
+    border-radius: .5rem;
+    background-color: #fac3a1;
+    visibility: hidden;
+}
+.table__body:hover::-webkit-scrollbar-thumb
+{
+    border-radius: .5rem;
+    background-color: #fac3a1;
+    visibility: visible;
+}
+
+thead, th
+{
+    // position: sticky;
+    top:0;
+    left: 0;
+}
+
+.buttons
+{
+//    position: relative;
+   display: flex;
+   flex-wrap: column wrap;
+   align-items: center;
+   justify-content: center;
+   margin: -12px;
+   button{
+    display: flex;
+   flex-wrap: column wrap;
+   align-items: center;
+   justify-content: center;
+   margin: -3px;
+   border: none;
+   border-radius: 5px;
+   }
+
+   button:hover
+   {
+      opacity: 80%;
+   }
+}
+
+
+
+.edit
+{
+    width: 25px;
+    height: 25px;
+    background-color: #329bd8;
+    justify-content: center;
+}
+
+.details
+{
+    width: 25px;
+    height: 25px;
+    background-color: #f79d65;
+    justify-content: center;
+}
