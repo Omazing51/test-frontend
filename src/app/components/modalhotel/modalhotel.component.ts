@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { LocationI } from 'src/app/models/location.interface';
 import { SwitchService } from 'src/app/services/switch.service';
 
 @Component({
@@ -12,6 +13,7 @@ import { SwitchService } from 'src/app/services/switch.service';
 })
 export class ModalhotelComponent {
 
+  locations: LocationI[] = [];
   formHotel: FormGroup;
   subRef$: Subscription;
 
@@ -19,10 +21,29 @@ export class ModalhotelComponent {
     private http: HttpClient, private router: Router ) 
     {
         this.formHotel = formBuilder.group({
-          email: ['', Validators.required],
-          userPassword: ['', Validators.required]
+          hotelName: ['', Validators.required],
+          hotelDescription: [''],
+          location: ['', Validators.required],
+          hotelClass: [''],
+          hotelStatus: ['', Validators.required],          
         });
     }
+
+  ngOnInit(){
+    let httpHeaders: HttpHeaders = new HttpHeaders();
+    const token = sessionStorage.getItem('token');
+    httpHeaders = httpHeaders.append('Authorization', 'Bearer' +' '+ token);
+    this.http.get<LocationI[]>('https://localhost:7066/api/locations', {
+      headers: httpHeaders,
+      observe: 'response'
+    }).subscribe(res => {
+     this.locations =  res.body;
+    }),
+    err=> {
+      console.log('No se pudieron cargar las ubicaciones', err);
+    }
+  }
+ 
 
     closeModal()
     {

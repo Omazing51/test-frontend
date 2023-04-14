@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { HotelI } from 'src/app/models/hotel.interface';
+import { SwitchService } from 'src/app/services/switch.service';
 
 @Component({
   selector: 'app-hotel',
@@ -8,15 +9,16 @@ import { HotelI } from 'src/app/models/hotel.interface';
   styleUrls: ['./hotel.component.scss']
 })
 export class HotelComponent {
-  
+  public modalSwitch : any;
   hotels: HotelI[] = [];
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private modalH:SwitchService) {}
 
   ngOnInit(){
+    this.modalH.$modal.subscribe((value=>{this.modalSwitch = value}));
+    console.log(this.modalSwitch)
 
     let httpHeaders: HttpHeaders = new HttpHeaders();
     const token = sessionStorage.getItem('token');
-    console.log("get token", token);
     httpHeaders = httpHeaders.append('Authorization', 'Bearer' +' '+ token);
     this.http.get<HotelI[]>('https://localhost:7066/api/hotels', {
       headers: httpHeaders,
@@ -28,6 +30,9 @@ export class HotelComponent {
       console.log('No se pudieron cargar los hoteles', err);
     }
   }
-
+  openModal()
+  {
+      this.modalSwitch = true;
+  }
 
 }

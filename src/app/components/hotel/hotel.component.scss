@@ -16,10 +16,28 @@
     align-items: center;
 }
 .table__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 15px;
     height: 7vh;
     text-align: center;
-    color: #f79d65;;
+    color: #f79d65;
+
+.add
+{
+    width: 100px;
+    height: 35px;
+    background-color: #7fb685;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+}
+.add:hover
+{
+    opacity: 80%;
+}
 }
 .table__body{
     height: 90vh;
@@ -105,19 +123,7 @@ thead, th
    }
 }
 
-img
-{
-    position: absolute;
-    align-items: center;
-}
-.add
-{
-    width: 25px;
-    height: 25px;
-    background-color: #7fb685;
-    justify-content: center;
-    
-}
+
 
 .edit
 {
